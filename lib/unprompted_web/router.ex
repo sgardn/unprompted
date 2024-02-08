@@ -1,5 +1,6 @@
 defmodule UnpromptedWeb.Router do
   use UnpromptedWeb, :router
+  import PhoenixStorybook.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,8 +15,14 @@ defmodule UnpromptedWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    storybook_assets()
+  end
+
   scope "/", UnpromptedWeb do
     pipe_through :browser
+
+    live_storybook "/storybook", backend_module: Elixir.UnpromptedWeb.Storybook
 
     get "/", PageController, :home
   end

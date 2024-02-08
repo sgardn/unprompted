@@ -6,6 +6,7 @@ const fs = require("fs")
 const path = require("path")
 
 module.exports = {
+  important: ".unprompted-web", // storybook
   content: [
     "./js/**/*.js",
     "../lib/unprompted_web.ex",

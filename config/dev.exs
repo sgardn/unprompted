@@ -26,7 +26,8 @@ config :unprompted, UnpromptedWeb.Endpoint,
   secret_key_base: "SmfO4+1MTS3BIX+aB1Sf14Ky8JP/869DqjF6GKmQplSBtNqA5N+HTxHoFhAB3bTo",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:unprompted, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:unprompted, ~w(--watch)]}
+    tailwind: {Tailwind, :install_and_run, [:unprompted, ~w(--watch)]},
+    storybook_tailwind: {Tailwind, :install_and_run, [:storybook, ~w(--watch)]}
   ]
 
 # ## SSL Support
@@ -58,7 +59,8 @@ config :unprompted, UnpromptedWeb.Endpoint,
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/unprompted_web/(controllers|live|components)/.*(ex|heex)$"
+      ~r"lib/unprompted_web/(controllers|live|components)/.*(ex|heex)$",
+      ~r"storybook/.*(exs)$"
     ]
   ]
 
