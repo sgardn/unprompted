@@ -6,7 +6,8 @@ const fs = require("fs")
 const path = require("path")
 
 module.exports = {
-  important: ".unprompted-web", // storybook
+  important: ".unprompted-web", // DANGER - this is a tailwind prefix added from the storybook installation
+  // read more here: https://tailwindcss.com/docs/configuration#important
   content: [
     "./js/**/*.js",
     "../lib/unprompted_web.ex",
