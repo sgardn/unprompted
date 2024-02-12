@@ -49,13 +49,15 @@ defmodule Unprompted.MixProject do
        sparse: "optimized",
        app: false,
        compile: false,
+       override: true,
        depth: 1},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      {:phoenix_storybook, "~> 0.6.0"}
     ]
   end
 
@@ -76,7 +78,8 @@ defmodule Unprompted.MixProject do
       "assets.deploy": [
         "tailwind unprompted --minify",
         "esbuild unprompted --minify",
-        "phx.digest"
+        "tailwind storybook --minify",
+        "phx.digest",
       ]
     ]
   end
