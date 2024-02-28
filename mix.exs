@@ -57,7 +57,7 @@ defmodule Unprompted.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.2"},
-      {:phoenix_storybook, "~> 0.6.0"}
+      {:phoenix_storybook, "~> 0.6.1"}
     ]
   end
 
